@@ -32,6 +32,9 @@ jobs:
 
       - name: Install cairo bindings
         run: |
+          ls
+          ls cairo
+          cat cairo/Cargo.toml
           poe install_cairo_bindings prod
           
       - name: Build binary
