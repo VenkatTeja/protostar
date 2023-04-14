@@ -26,14 +26,23 @@ jobs:
           
       - name: Install project dependencies
         run: |
+          echo "=========LS =============="
+          ls
+          echo "===========ls cairo ============"
+          ls cairo
+          echo "========== cat ============"
+          cat cairo/Cargo.toml
           poetry export -o requirements.txt
           pip install -r requirements.txt
           poetry install
 
       - name: Install cairo bindings
         run: |
+          echo "=========LS =============="
           ls
+          echo "===========ls cairo ============"
           ls cairo
+          echo "========== cat ============"
           cat cairo/Cargo.toml
           poe install_cairo_bindings prod
           
