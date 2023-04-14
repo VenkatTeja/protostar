@@ -13,15 +13,15 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: recursive
-      - name: Set up Python ${{ vars.PYTHON_VERSION }}
+      - name: Set up Python 3.9.14
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ vars.PYTHON_VERSION }}
+          python-version: 3.9.14
 
       - name: Setup package manager
         run: |
           python -m pip install --upgrade pip
-          pip install poetry==${{ vars.POETRY_VERSION }}
+          pip install poetry==1.4.2
           poetry config virtualenvs.create false
           
       - name: Install project dependencies
